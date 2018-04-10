@@ -29,6 +29,7 @@ body {
 }
 
 input[type='text'] {
+	text-align: center;
 	background: transparent;
 	border: none;
 	outline: none;
@@ -149,6 +150,7 @@ img.nav-bg {
 	input[type='text'] {
 		border-bottom: none;
 		text-shadow: 0 0 10px rgba(23, 32, 42, 0.8);
+		text-align: left;
 	}
 
 	input::placeholder {

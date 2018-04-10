@@ -107,15 +107,15 @@ img.nav-bg {
 		background-size: cover;
 	}
 
-	.main-wrap {
-
-	}
-
 	.nav ul li {
 		list-style-type: none;
 		padding: 5px;
 		font-size: 1.8em;
 
+	}
+
+	.main-wrap {
+		flex-flow: row wrap;
 	}
 
 

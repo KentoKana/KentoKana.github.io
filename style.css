@@ -70,7 +70,7 @@ input::placeholder {
 	color: white;
 	text-shadow: 0 0 10px rgba(23, 32, 42, 0.5);
 	transition: 1s ease-out;
-	opacity: 0.6;
+	opacity: 1;
 }
 
 .nav ul a:hover {
@@ -112,6 +112,10 @@ img.nav-bg {
 		padding: 5px;
 		font-size: 1.8em;
 
+	}
+
+	.nav ul a {
+		opacity: 0.5;
 	}
 
 	.main-wrap {

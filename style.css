@@ -38,8 +38,10 @@ input[type='text'] {
 
 input::placeholder {
 	text-align: center;
+	align-self: center;
 	color: white;
 	opacity: 0.9;
+	margin: auto;
 }
 
 
@@ -61,6 +63,8 @@ input::placeholder {
 }
 
 .nav ul li {
+	align-self: center
+	flex-grow: 1;
 	list-style-type: none;
 	padding: 2px;
 	font-size: 3em;

@@ -85,13 +85,14 @@ input::placeholder {
 input::placeholder {
 	opacity: 0.5;
 	text-shadow: 0 0 10px rgba(23, 32, 42, 0.8);
+	text-align: center;
 }
 
 img.nav-bg {
 	position: absolute;
 	opacity: 0.2;
 	width: 400px;
-	top: 140px;
+	top: 100px;
 	left: -20px;
 	z-index: -1;
 }

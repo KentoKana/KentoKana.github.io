@@ -16,10 +16,10 @@ body {
 	display: flex;
 	flex-flow: row wrap;
 	min-height: 40vh;
-	text-align: left;
-	justify-content: left;
+	text-align: center;
+	justify-content: center;
 	align-items: center;
-	margin-left: 5%;
+	
 }
 
 .greet, .clock {
@@ -37,6 +37,7 @@ input[type='text'] {
 }
 
 input::placeholder {
+	text-align: center;
 	color: white;
 	opacity: 0.9;
 }
@@ -52,16 +53,16 @@ input::placeholder {
 .nav ul{
 
 	display: flex;
-	flex-flow: column wrap;
+	flex-flow: row wrap;
 	padding: 0;
 	justify-content: space-around;
-	margin-left: 5%;
+	
 
 }
 
 .nav ul li {
 	list-style-type: none;
-	padding: 5px;
+	padding: 2px;
 	font-size: 3em;
 
 }
@@ -107,7 +108,13 @@ img.nav-bg {
 		background-size: cover;
 	}
 
+	.nav ul{
+		flex-flow: column wrap;
+		margin-left: 5%;
+	}
+
 	.nav ul li {
+		
 		list-style-type: none;
 		padding: 5px;
 		font-size: 1.8em;
@@ -120,6 +127,9 @@ img.nav-bg {
 
 	.main-wrap {
 		flex-flow: row wrap;
+		margin-left: 5%;
+		justify-content: left;
+		text-align: left;
 	}
 
 
@@ -134,6 +144,10 @@ img.nav-bg {
 	input[type='text'] {
 		border-bottom: none;
 		text-shadow: 0 0 10px rgba(23, 32, 42, 0.8);
+	}
+
+	input::placeholder {
+		text-align: left;
 	}
 
 	

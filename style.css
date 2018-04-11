@@ -67,7 +67,7 @@ input::placeholder {
 	align-self: center
 	flex-grow: 1;
 	list-style-type: none;
-	padding: 2px;
+	padding: 4px;
 	font-size: 3em;
 
 }
@@ -77,6 +77,7 @@ input::placeholder {
 	text-shadow: 0 0 10px rgba(23, 32, 42, 0.5);
 	transition: 1s ease-out;
 	opacity: 1;
+	text-decoration: none;
 }
 
 .nav ul a:hover {
@@ -103,9 +104,6 @@ img.nav-bg {
 }
 
 
-
-
-
 /*=================MEDIA QUERY==================================*/
 @media only screen and (min-width: 769px){
 
@@ -113,7 +111,7 @@ img.nav-bg {
 		background-repeat: no-repeat;
 		background-size: cover;
 	}
-
+	/*=========Navigation=========================================*/
 	.nav ul{
 		flex-flow: column wrap;
 		margin-left: 5%;
@@ -129,7 +127,22 @@ img.nav-bg {
 
 	.nav ul a {
 		opacity: 0.5;
+		text-decoration: none;
+
 	}
+
+	/*========Drop-down menu====================================*/
+
+/*	.subreddit a{
+		display: none;
+		z-index: 999;
+	}
+*/
+	.fa-reddit:hover .subreddit a{
+		display: block;
+	}
+
+	/*========Main Content======================================*/
 
 	.main-wrap {
 		flex-flow: row wrap;

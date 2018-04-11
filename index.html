@@ -1,76 +1,174 @@
-<!DOCTYPE html>
-<html>
 
-<head>
-	<title> Start Page </title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="stylesheet" type="text/css" href="normalize.css">
-	<link href="https://fonts.googleapis.com/css?family=Oranienbaum" rel="stylesheet">
-	<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
-	<meta charset="UTF-8">
-	<meta name="description" content="Token Design Portfolio">
-	<meta name="keywords" content="HTML,CSS,JavaScript, Portfolio">
-	<meta name="author" content="Kento Kanazawa">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-</head>
+*{
+	box-sizing: border-box;
+}
 
-<body id="body">
-	<div class="main-wrap">
-		<h1>
-			<div class="greet" id="greeting"></div>
-			<div class="clock" id="time"></div>
-			<div class="search">
-				<form method="get" action="https://duckduckgo.com" target="_blank" >
-					<input name="q" type="text" autofocus autocomplete="off" placeholder="Search...">
-				</form>
-			</div>
-		</h1>
-	</div>
+body {
+	font-family: 'Oranienbaum', serif;
+	background: /*url("BoW-Morning.jpg") */no-repeat center center fixed;
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
 
 
-	<nav class="nav">
-		<ul>
-			<li>
-				<a href="http://www.reddit.com" target="blank" class="reddit"> 
-					<i class="fab fa-reddit" aria-hidden="true"></i>Reddit
-				</a>
-			</li> 
+.main-wrap {
+	display: flex;
+	flex-flow: row wrap;
+	min-height: 40vh;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	
+}
 
-			<li>
-				<a href="http://www.github.com/KentoKana" target="blank">
-					<i class="fab fa-github"></i>GitHub
-				</a>
-			</li> 
+.greet, .clock {
+	color: white;
+	text-shadow: 0px 3px 10px rgba(23, 32, 42, 0.5);
 
-			<li>
-				<a href="http://www.mail.yahoo.com" target="blank">
-					<i class="far fa-envelope-open"></i>Mail
-				</a>
-			</li> 
+}
 
-			<li>
-				<a href="http://www.facebook.com" target="blank">
-					<i class="fab fa-facebook"></i>Facebook
-				</a>
-			</li> 
+input[type='text'] {
+	text-align: center;
+	background: transparent;
+	border: none;
+	outline: none;
+	border-bottom: solid 3px white;
+	color: white;
+}
 
-			<li> 
-				<a href="https://www.instagram.com/tokenartist/" target="blank">
-					<i class="fab fa-instagram"></i>Instagram
-				</a>
-			</li> 
+input::placeholder {
+	text-align: center;
+	align-self: center;
+	color: white;
+	opacity: 0.9;
+	margin: auto;
+}
 
-			<li> 
-				<a href="http://www.youtube.com" target="blank">
-					<i class="fab fa-youtube"></i>YouTube
-				</a>
-			</li> 
-		</ul>
-	</nav>
 
-	<img src="sheikah.png" class="nav-bg"> 
 
-	<script src="functionality.js"></script>
-</body>
 
-</html>
+/*====================Navigation===========================*/
+.nav {
+	position: relative;
+}
+
+.nav ul{
+
+	display: flex;
+	flex-flow: row wrap;
+	padding: 0;
+	justify-content: space-around;
+	
+
+}
+
+.nav ul li {
+	align-self: center
+	flex-grow: 1;
+	list-style-type: none;
+	padding: 4px;
+	font-size: 3em;
+
+}
+
+.nav ul a {
+	color: white;
+	text-shadow: 0 0 10px rgba(23, 32, 42, 0.5);
+	transition: 1s ease-out;
+	opacity: 1;
+	text-decoration: none;
+}
+
+.nav ul a:hover {
+	
+	text-shadow: 10px 10px 10px rgba(23, 32, 42, 1);
+	transition: 1s ease;
+	filter: drop-shadow(0 0 7px rgba(118, 215, 196, 1));
+	opacity: 1;
+}
+
+input::placeholder {
+	opacity: 0.5;
+	text-shadow: 0 0 10px rgba(23, 32, 42, 0.8);
+	text-align: center;
+}
+
+img.nav-bg {
+	position: absolute;
+	opacity: 0.2;
+	width: 400px;
+	top: 100px;
+	left: -20px;
+	z-index: -1;
+}
+
+
+/*=================MEDIA QUERY==================================*/
+@media only screen and (min-width: 769px){
+
+	body {
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	/*=========Navigation=========================================*/
+	.nav ul{
+		flex-flow: column wrap;
+		margin-left: 5%;
+	}
+
+	.nav ul li {
+		
+		list-style-type: none;
+		padding: 5px;
+		font-size: 1.8em;
+
+	}
+
+	.nav ul a {
+		opacity: 0.5;
+		text-decoration: none;
+
+	}
+
+	/*========Drop-down menu====================================*/
+
+/*	.subreddit a{
+		display: none;
+		z-index: 999;
+	}
+*/
+	.fa-reddit:hover .subreddit a{
+		display: block;
+	}
+
+	/*========Main Content======================================*/
+
+	.main-wrap {
+		flex-flow: row wrap;
+		margin-left: 5%;
+		justify-content: left;
+		text-align: left;
+	}
+
+
+	img.nav-bg {
+		position: absolute;
+		width: 600px;
+		top: 180px;
+		left: -250px;
+		z-index: -1;
+	}
+
+	input[type='text'] {
+		border-bottom: none;
+		text-shadow: 0 0 10px rgba(23, 32, 42, 0.8);
+		text-align: left;
+	}
+
+	input::placeholder {
+		text-align: left;
+	}
+
+	
+}

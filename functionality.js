@@ -41,11 +41,9 @@ function selectGreetings() {
 
 var greet = selectGreetings();
 
-console.log(greet)
-
 function displayGreeting() {
 	var name = 'Kento';
-	return document.getElementById('greeting').innerHTML = greet + name + '.';
+	document.getElementById('greeting').innerHTML = greet + name + '.';
 }
 
 var sayGreeting = displayGreeting()
@@ -53,16 +51,44 @@ var sayGreeting = displayGreeting()
 setInterval(displayGreeting, 1000);
 
 
-//Change background image based on greeting//
+//Change background image based on time//
 function changeBG() {
 	var currentTime = new Date();
 	var hours = currentTime.getHours();
 	if (hours >= 16 && hours <= 23 || hours >= 0 && hours <= 4) {
-		return  document.body.style.backgroundImage = "url('BoW-Night.jpg')";
+		document.body.style.backgroundImage = "url('BoW-Night.jpg')";
 	} else {
-		return document.body.style.backgroundImage = "url('BoW-Morning.jpg')";
+		document.body.style.backgroundImage = "url('BoW-Morning.jpg')";
 	}
 	
 }
 
 setInterval(changeBG, 1000);
+
+//Make Sheikah symbol glow when hovered over nav links//
+
+var animation = false;
+var background = document.getElementById("nav-backdrop");
+
+function glowOn() {
+	animation = true;
+	if (background.className === "sheikah") {
+		background.className += " active";
+	}
+}
+
+
+
+
+function glowOff() {
+	animation = false;
+	setTimeout(function() {
+		if (animation == false && background.className === "sheikah active") {
+			background.className = "sheikah";
+		}
+	}, 50)
+}
+
+function easeout() {
+	background.style.transition="1s ease-out";
+}

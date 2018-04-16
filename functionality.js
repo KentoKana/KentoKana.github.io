@@ -31,7 +31,7 @@ function pageLoaded(){
 			searchLoad.style.display="";
 			console.log('the page is loaded');
 		}
-	}, 4000)
+	}, 2000)
 }
 
 

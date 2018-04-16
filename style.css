@@ -3,12 +3,32 @@
 	box-sizing: border-box;
 }
 
+
 body {
 	font-family: 'Oranienbaum', serif;
-	background: /*url("BoW-Morning.jpg") */no-repeat center center fixed;
+	background: no-repeat center center fixed;
 	width: 100%;
 	height: auto;
 	overflow: hidden;
+}
+
+img.checkBGLoad {
+	display: none;
+}
+
+img.preloadOff {
+	display: none;
+}
+
+img.preloadImg{
+	position: absolute;
+	padding: 0;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%); 
+
+	height: 100px;
+	animation: glowyellow 2s infinite;
 }
 
 
@@ -19,16 +39,22 @@ body {
 	text-align: center;
 	justify-content: center;
 	align-items: center;
-	
 }
 
 .greet, .clock {
+	animation: fadein 5s;
 	color: white;
 	text-shadow: 0px 3px 10px rgba(23, 32, 42, 0.5);
 
 }
 
+.search {
+	animation: fadein 7s;
+}
+
 input[type='text'] {
+
+	text-align: center;
 	background: transparent;
 	border: none;
 	outline: none;
@@ -37,34 +63,33 @@ input[type='text'] {
 }
 
 input::placeholder {
+
 	text-align: center;
+	align-self: center;
 	color: white;
 	opacity: 0.9;
+	margin: auto;
 }
-
-
-
 
 /*====================Navigation===========================*/
 .nav {
+	animation: fadein 10s;
 	position: relative;
 }
 
+
 .nav ul{
-
+	font-size:;
 	display: flex;
-	flex-flow: row wrap;
+	flex-flow: column wrap;
 	padding: 0;
-	justify-content: space-around;
-	
-
 }
 
 .nav ul li {
+	align-self: left;
 	list-style-type: none;
-	padding: 2px;
-	font-size: 3em;
-
+	font-size: 2em;
+	align-self: center;
 }
 
 .nav ul a {
@@ -72,6 +97,7 @@ input::placeholder {
 	text-shadow: 0 0 10px rgba(23, 32, 42, 0.5);
 	transition: 1s ease-out;
 	opacity: 1;
+	text-decoration: none;
 }
 
 .nav ul a:hover {
@@ -88,17 +114,10 @@ input::placeholder {
 	text-align: center;
 }
 
-img.nav-bg {
-	position: absolute;
-	opacity: 0.2;
-	width: 400px;
-	top: 100px;
-	left: -20px;
-	z-index: -1;
+img.sheikah {
+	display: none;
+
 }
-
-
-
 
 
 /*=================MEDIA QUERY==================================*/
@@ -108,8 +127,9 @@ img.nav-bg {
 		background-repeat: no-repeat;
 		background-size: cover;
 	}
-
+	/*=========Navigation=========================================*/
 	.nav ul{
+
 		flex-flow: column wrap;
 		margin-left: 5%;
 	}
@@ -117,14 +137,19 @@ img.nav-bg {
 	.nav ul li {
 		
 		list-style-type: none;
-		padding: 5px;
 		font-size: 1.8em;
-
+		align-self: left;
 	}
 
 	.nav ul a {
 		opacity: 0.5;
+		text-decoration: none;
+
 	}
+
+	/*========Drop-down menu====================================*/
+
+	/*========Main Content======================================*/
 
 	.main-wrap {
 		flex-flow: row wrap;
@@ -133,23 +158,78 @@ img.nav-bg {
 		text-align: left;
 	}
 
-
-	img.nav-bg {
-		position: absolute;
-		width: 600px;
-		top: 180px;
-		left: -250px;
-		z-index: -1;
-	}
-
 	input[type='text'] {
 		border-bottom: none;
 		text-shadow: 0 0 10px rgba(23, 32, 42, 0.8);
+		text-align: left;
 	}
 
 	input::placeholder {
 		text-align: left;
 	}
 
+	img.sheikah {
+		display: block;
+		position: absolute;
+		width: 600px;
+		top: -150px;
+		left: -250px;
+		z-index: -1;
+		transition: 1s ease-out;
+		opacity: 0.3;
+	}
+
+	.sheikah.active {
+		/*filter: drop-shadow(5px 5px 10px rgba(118, 215, 196, 1));
+		opacity: 0.7;*/
+		animation: glowblue 3s infinite;
+
+
+	}
 	
+}
+
+
+/*====Animation======*/
+@keyframes glowblue{
+	0% {
+		opacity:0.3;
+		filter: drop-shadow(5px 5px 10px rgba(118, 215, 196, 0));
+	}
+	50% {
+		opacity:0.7;
+		filter: drop-shadow(5px 5px 10px rgba(118, 215, 196, 1));
+	}
+
+	100% {
+		opacity:0.3;
+		filter: drop-shadow(5px 5px 10px rgba(118, 215, 196, 0));
+	}
+
+}
+
+@keyframes glowyellow{
+	0% {
+		filter: drop-shadow(0px 0px 10px rgba(247, 223, 12, 0));
+	}
+	50% {
+	
+		filter: drop-shadow(0px 0px 10px rgba(247, 223, 12, 1));
+	}
+
+	100% {
+	
+		filter: drop-shadow(0px 0px 10px rgba(247, 223, 12, 0));
+	}
+
+}
+
+
+@keyframes fadein {
+	from {
+		opacity:0;
+	}
+	to {
+		opacity:1;
+	}
 }

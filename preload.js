@@ -15,22 +15,22 @@ let displayAsset = [
 
 let loaded = false;
 
-function displayOff(asset){
+function displayOff(){
   if(loaded === false){
-    for(i=0;i<asset.length;i++){
-      asset[i].style.display = 'none';
+    for(i=0;i<displayAsset.length;i++){
+      displayAsset[i].style.display = 'none';
     }
   } 
 }
 
-function pageLoaded(asset){
+function pageLoaded(){
   setInterval(function(){
     loaded = true;
     if(loaded === true && preload.className === "preloadImg"){
       preload.className = "preloadOff";
       document.body.style.display = ""
-      for(i=0;i<asset.length;i++){
-        asset[i].style.display = '';
+      for(i=0;i<displayAsset.length;i++){
+        displayAsset[i].style.display = '';
       }
       console.log('the page is loaded');
     }

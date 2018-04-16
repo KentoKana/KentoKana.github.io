@@ -7,10 +7,10 @@ const greetLoad = document.getElementById('greeting');
 const searchLoad = document.getElementById('searching');
 
 let displayAsset = [
-navi,
-timeLoad,
-greetLoad,
-searchLoad
+	navi,
+	timeLoad,
+	greetLoad,
+	searchLoad
 ];
 
 let loaded = false;
@@ -34,8 +34,9 @@ function pageLoaded(asset){
 			}
 			console.log('the page is loaded');
 		}
-	}, 2000)
+	}, 2500)
 }
+
 
 //Clock display=======================================//
 function displayTime() {

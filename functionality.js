@@ -1,3 +1,40 @@
+//Pre-Loading Screen====================================//
+
+var preload = document.getElementById('preloadTriforce');
+var bodyContent = document.getElementById('body');
+var navi = document.getElementById('navigation');
+var timeLoad = document.getElementById('time');
+var greetLoad = document.getElementById('greeting');
+var searchLoad = document.getElementById('searching');
+
+
+var loaded = false;
+
+function displayOff(){
+	if(loaded === false){
+		navi.style.display="none";
+		timeLoad.style.display="none";
+		greetLoad.style.display="none";
+		searchLoad.style.display="none";
+	} 
+}
+
+function pageLoaded(){
+	setInterval(function(){
+		loaded = true;
+		if(loaded === true && preload.className === "preloadImg"){
+			preload.className = "preloadOff";
+			document.body.style.display = ""
+			navi.style.display = "";
+			timeLoad.style.display="";
+			greetLoad.style.display="";
+			searchLoad.style.display="";
+			console.log('the page is loaded');
+		}
+	}, 2000)
+}
+
+
 //Clock display=======================================//
 function displayTime() {
 	var currentTime = new Date();

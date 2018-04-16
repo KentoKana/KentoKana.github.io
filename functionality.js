@@ -1,39 +1,41 @@
 //Pre-Loading Screen====================================//
 
-var preload = document.getElementById('preloadTriforce');
-var bodyContent = document.getElementById('body');
-var navi = document.getElementById('navigation');
-var timeLoad = document.getElementById('time');
-var greetLoad = document.getElementById('greeting');
-var searchLoad = document.getElementById('searching');
+const preload = document.getElementById('preloadTriforce');
+const navi = document.getElementById('navigation');
+const timeLoad = document.getElementById('time');
+const greetLoad = document.getElementById('greeting');
+const searchLoad = document.getElementById('searching');
 
+let displayAsset = [
+navi,
+timeLoad,
+greetLoad,
+searchLoad
+];
 
-var loaded = false;
+let loaded = false;
 
-function displayOff(){
+function displayOff(asset){
 	if(loaded === false){
-		navi.style.display="none";
-		timeLoad.style.display="none";
-		greetLoad.style.display="none";
-		searchLoad.style.display="none";
+		for(i=0;i<asset.length;i++){
+			asset[i].style.display = 'none';
+		}
 	} 
 }
 
-function pageLoaded(){
+function pageLoaded(asset){
 	setInterval(function(){
 		loaded = true;
 		if(loaded === true && preload.className === "preloadImg"){
 			preload.className = "preloadOff";
 			document.body.style.display = ""
-			navi.style.display = "";
-			timeLoad.style.display="";
-			greetLoad.style.display="";
-			searchLoad.style.display="";
+			for(i=0;i<asset.length;i++){
+				asset[i].style.display = '';
+			}
 			console.log('the page is loaded');
 		}
 	}, 2000)
 }
-
 
 //Clock display=======================================//
 function displayTime() {
